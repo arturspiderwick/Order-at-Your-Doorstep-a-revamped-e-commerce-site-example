@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sipariş Kapında — yenilenmiş e-ticaret site örneği </title>
+  <meta name="description" content="Tam kapsamlı örnek web sitesi — HTML, CSS, JS ile.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="18" fill="currentColor"/></svg>
+        <span>Sipariş Kapında</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#home">Anasayfa</a>
+        <a href="#menu">Menü</a>
+        <a href="#about">Hakkında</a>
+        <a href="#contact">İletişim</a>
+        <button class="btn btn-primary" id="open-order">Sipariş Ver</button>
+      </nav>
+
+      <button id="nav-toggle" aria-label="Menüyü aç">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1>Lezzet kapınıza gelsin</h1>
+        <p>Örnek restoran sitesi — responsive, erişilebilir ve modern bir UI.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="view-menu">Menüyü Gör</button>
+          <button class="btn" id="open-contact">Bize Ulaş</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="container section">
+      <h2>Popüler Ürünler</h2>
+      <div class="grid" id="product-grid">
+        <!-- Ürünler JS ile eklenecek -->
+      </div>
+    </section>
+
+    <section id="about" class="container section about">
+      <h2>Hakkımızda</h2>
+      <p>“Sipariş Kapında” örnek bir proje sitesidir. Bu demo, tam kapsamlı frontend özelliklerini içerir: responsive tasarım, modal, form doğrulama, localStorage tabanlı basit sepet ve favoriler.</p>
+      <div class="features">
+        <div class="feature">
+          <h3>Hızlı</h3>
+          <p>Minimal, modern kod — optimize edilmiş CSS ve temiz JS.</p>
+        </div>
+        <div class="feature">
+          <h3>Mobil uyumlu</h3>
+          <p>Flexbox ve grid düzenleri ile her cihazda iyi görünür.</p>
+        </div>
+        <div class="feature">
+          <h3>Kolay özelleştirme</h3>
+          <p>CSS değişkenleri ile renk ve tipografiyi hızlıca değiştirebilirsiniz.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <h2>İletişim</h2>
+      <form id="contact-form" class="form">
+        <label>İsim<input name="name" id="contact-name" required/></label>
+        <label>Email<input type="email" name="email" id="contact-email" required/></label>
+        <label>Mesaj<textarea name="message" id="contact-message" rows="4" required></textarea></label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Gönder</button>
+          <button class="btn" type="reset">Temizle</button>
+        </div>
+        <p id="contact-status" class="muted"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="yr"></span> arturspiderwick — Demo</p>
+      <small class="muted">Bu dosya sadece örnek amaçlıdır.</small>
+    </div>
+  </footer>
+
+  <!-- Modal: Order -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Kapat">✕</button>
+      <h3 id="modal-title">Sipariş Ver</h3>
+      <div id="cart-view">
+        <p class="muted">Sepetinizde <span id="cart-count">0</span> ürün var.</p>
+        <ul id="cart-list"></ul>
+        <div class="cart-total">Toplam: <strong id="cart-total">₺0.00</strong></div>
+        <div class="modal-actions">
+          <button id="checkout" class="btn btn-primary">Ödeme Yap (Demo)</button>
+          <button id="clear-cart" class="btn">Sepeti Temizle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
